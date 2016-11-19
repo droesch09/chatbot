@@ -17,14 +17,14 @@ app.get('/', function (req, res) {
 })
 
 // for Facebook verification
+webhook: function(req, res) {
 
-
-app.get('/webhook', (req, res) => {
-    if (req.query['hub.verify_token'] === mrcareermr) {
-        return res.send(req.query['hub.challenge']);
-    }
-    res.send('Error, wrong validation token');
-});
+   if (req.query['hub.verify_token'] === 'mrcareermr') {
+      res.send(req.query['hub.challenge']);
+   } else {
+      res.send('Error, wrong validation token');    
+   }
+}
 
 // Spin up the server
 app.listen(app.get('port'), function() {
