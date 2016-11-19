@@ -43,7 +43,7 @@ app.post('/webhook/', function (req, res) {
     res.sendStatus(200)
 })
 
-var token = "<my_voice_is_my_password_verify_me>"
+var token = "<"EAAFKotdMmt4BAJcULNzApVqqnhfvDP0TgmCXcGUtZCEhXWjnUnHGPNgAWJuOitz4Klt4dnCqR4e3egxv4jYJuWE3LZCn7T5fne5SBvYtgYyutFm6lqIgu0UKdZAJpkWWawB5UhGIq29rqzZA6f9zApNtwqZAR51uHGfaKpHDfkgZDZD“>"
 
 
 function sendTextMessage(sender, text) {
