@@ -49,19 +49,7 @@ app.post('/webhook', function (req, res) {
     });
     
     
-    // Spin up the server
-app.listen(app.get('port'), function() {
-    console.log('running on port', app.get('port'))
-})
-
-    // Assume all went well.
-    //
-    // You must send back a 200, within 20 seconds, to let us know
-    // you've successfully received the callback. Otherwise, the request
-    // will time out and we will keep trying to resend.
-    res.sendStatus(200);
-  }
-});
+ 
 
 function receivedMessage(event) {
   var senderID = event.sender.id;
@@ -133,4 +121,18 @@ function callSendAPI(messageData) {
     }
   });  
 }
+
+   // Spin up the server
+app.listen(app.get('port'), function() {
+    console.log('running on port', app.get('port'))
+})
+
+    // Assume all went well.
+    //
+    // You must send back a 200, within 20 seconds, to let us know
+    // you've successfully received the callback. Otherwise, the request
+    // will time out and we will keep trying to resend.
+    res.sendStatus(200);
+  }
+});
 
