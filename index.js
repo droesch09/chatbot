@@ -69,7 +69,7 @@ function sendTextMessage(sender, text) {
 
 function sendGenericMessage(sender) {
     messageData = {
-        text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch.\nich kann für dich folgende Dinge erledigen\n1. blablabla\2. blablabla"
+        text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch.\nIch kann einige Dinge für dich sofort erledigen:\n1. schreibe #praktikum dann zeige ich dir alle aktuell angebotenen Praktika bei Daniel.\n2. schreibe #einstieg und ich erkläre dir welche Einstiegsmöglichkeiten es bei Daniel gibt\n 3. schreibe #daniel um direkt mit Daniel zu chatten"
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
