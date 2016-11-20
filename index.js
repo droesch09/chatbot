@@ -37,11 +37,11 @@ app.post('/webhook/', function (req, res) {
                 sendGenericMessage(sender)
                 continue
             } 
-            else if (text === 'Hello' || text === 'Hi' || text === 'Hey' || text === 'hello' || text === 'hi' || text === 'hey') {
+            else if (text === '#praktikum' || text === '#Praktikum') {
                 sendPraktikumMessage(sender)
                 continue
             }
-            else if (text === 'Hello' || text === 'Hi' || text === 'Hey' || text === 'hello' || text === 'hi' || text === 'hey') {
+            else if (text === '#einsteig' || text === '#Einstieg') {
                 sendEinstiegMessage(sender)
                 continue
             }
