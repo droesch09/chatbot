@@ -36,6 +36,14 @@ app.post('/webhook/', function (req, res) {
             if (text === 'Hello' || text === 'Hi' || text === 'Hey' || text === 'hello' || text === 'hi' || text === 'hey') {
                 sendGenericMessage(sender)
                 continue
+            } 
+            else if (text === 'Hello' || text === 'Hi' || text === 'Hey' || text === 'hello' || text === 'hi' || text === 'hey') {
+                sendPraktikumMessage(sender)
+                continue
+            }
+            else if (text === 'Hello' || text === 'Hi' || text === 'Hey' || text === 'hello' || text === 'hi' || text === 'hey') {
+                sendEinstiegMessage(sender)
+                continue
             }
             sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde sofort Daniel fragen... :)")
         }
@@ -70,6 +78,48 @@ function sendTextMessage(sender, text) {
 function sendGenericMessage(sender) {
     messageData = {
         text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch.\nIch kann dich über einige Dinge sofort informieren:\n1. #praktikum\n2. #einstieg\noder schreibe @daniel um direkt mit Daniel zu chatten."
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendPraktikumMessage(sender) {
+    messageData = {
+        text:"Daniel benötigt gerade unbedingt Unterstützung in folgenden Bereichen:\nTee kochen\nWäsche waschen\nBier brauen\nInteressiert dich ein Bereich? Dann schreibe das am besten mit @daniel direkt an Daniel."
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendEinstiegMessage(sender) {
+    messageData = {
+        text:"Studium fertig? Perfekt! Daniel sucht gerade Absolventen in folgenden Bereichen:\nTee kochen\nWäsche waschen\nBier brauen\nInteressiert dich ein Bereich? Dann schreibe das am besten mit @daniel direkt an Daniel."
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
