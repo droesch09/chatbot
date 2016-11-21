@@ -185,7 +185,19 @@ function sendEinstiegMessage(sender) {
 
 function sendAboutMessage(sender) {
     messageData = {
-        text: "Daniel ist ein professioneller Facebook Developer und hat mich am 15.11.2016 ins Leben gerufen. Erfahre mehr über Daniel und seine Projekte auf https://github.com/droesch09"        
+        text: "Daniel ist ein professioneller Facebook Developer und hat mich am 15.11.2016 ins Leben gerufen. Erfahre mehr über Daniel und seine Projekte auf https://github.com/droesch09",
+         quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Praktikum",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Praktikum"
+        },
+        {
+          "content_type":"text",
+          "title":"Einstieg",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+        }
+    ]
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
