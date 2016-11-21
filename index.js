@@ -46,7 +46,7 @@ app.post('/webhook/', function (req, res) {
                 continue
             }            
             else if (text === 'Über Daniel') {
-                sendEinstiegMessage(sender)
+                sendAboutMessage(sender)
                 continue
             }
             sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde sofort Daniel fragen... :)")
@@ -119,7 +119,19 @@ function sendGenericMessage(sender) {
 
 function sendPraktikumMessage(sender) {
     messageData = {
-        text:"Daniel benötigt gerade unbedingt Unterstützung in folgenden Bereichen:\nTee kochen\nWäsche waschen\nBier brauen\nInteressiert dich ein Bereich? Dann schreibe das am besten mit @daniel direkt an Daniel."
+        text:"Daniel benötigt gerade unbedingt Unterstützung in folgenden Bereichen:\nTee kochen\nWäsche waschen\nBier brauen\nInteressiert dich ein Bereich? Dann schreibe das am besten mit @daniel direkt an Daniel.",
+        quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Einstieg",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+        },
+        {
+          "content_type":"text",
+          "title":"Über Daniel",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
+        }
+    ]
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -140,7 +152,19 @@ function sendPraktikumMessage(sender) {
 
 function sendEinstiegMessage(sender) {
     messageData = {
-        text: "Studium fertig? Perfekt! Daniel sucht gerade Absolventen in folgenden Bereichen:\nTee kochen\nWäsche waschen\nBier brauen\nInteressiert dich ein Bereich? Dann schreibe das am besten mit @daniel direkt an Daniel."        
+        text: "Studium fertig? Perfekt! Daniel sucht gerade Absolventen in folgenden Bereichen:\nTee kochen\nWäsche waschen\nBier brauen\nInteressiert dich ein Bereich? Dann schreibe das am besten mit @daniel direkt an Daniel.",
+         quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Praktikum",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Praktikum"
+        },
+        {
+          "content_type":"text",
+          "title":"Über Daniel",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
+        }
+    ]
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -159,7 +183,7 @@ function sendEinstiegMessage(sender) {
     })
 }
 
-function sendEinstiegMessage(sender) {
+function sendAboutMessage(sender) {
     messageData = {
         text: "Daniel ist ein professioneller Facebook Developer und hat mich am 15.11.2016 ins Leben gerufen. Erfahre mehr über Daniel und seine Projekte auf https://github.com/droesch09"        
     }
