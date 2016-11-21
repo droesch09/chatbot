@@ -77,7 +77,23 @@ function sendTextMessage(sender, text) {
 
 function sendGenericMessage(sender) {
     messageData = {
-        text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch.\nIch kann dich über einige Dinge sofort informieren:\n1. #praktikum\n2. #einstieg\noder schreibe @daniel um direkt mit Daniel zu chatten."
+        text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch.\nIch kann dich über einige Dinge sofort informieren:\n1. #praktikum\n2. #einstieg\noder schreibe @daniel um direkt mit Daniel zu chatten.",
+        quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Praktikum",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
+        },
+        {
+          "content_type":"text",
+          "title":"Einstieg",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
+        },
+        {
+          "content_type":"text",
+          "title":"Über Daniel",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
+        }
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -119,25 +135,7 @@ function sendPraktikumMessage(sender) {
 
 function sendEinstiegMessage(sender) {
     messageData = {
-        text: "What's your favorite movie genre?",
-      quick_replies: [
-        {
-          "content_type":"text",
-          "title":"Action",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
-        },
-        {
-          "content_type":"text",
-          "title":"Comedy",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
-        },
-        {
-          "content_type":"text",
-          "title":"Drama",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
-        }
-      ]
-        
+        text: "Studium fertig? Perfekt! Daniel sucht gerade Absolventen in folgenden Bereichen:\nTee kochen\nWäsche waschen\nBier brauen\nInteressiert dich ein Bereich? Dann schreibe das am besten mit @daniel direkt an Daniel."        
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
