@@ -41,7 +41,7 @@ app.post('/webhook/', function (req, res) {
                 sendPraktikumMessage(sender)
                 continue
             }
-            else if (text === '#einsteig' || text === '#Einstieg') {
+            else if (text === '#einstieg' || text === '#Einstieg') {
                 sendEinstiegMessage(sender)
                 continue
             }
