@@ -256,13 +256,7 @@ function sendDanielMessage(sender) {
           "title":"Über Daniel",
             "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
         }
-    ],
-        "attachment":{
-            "type":"image",
-            "payload":{
-            "url":"http://www.deyoungmedia.com/wp-content/uploads/2014/07/steve-jobs-morreu-brasil-153927.jpg"
-            }
-        }
+    ]
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
