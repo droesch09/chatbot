@@ -37,11 +37,11 @@ app.post('/webhook/', function (req, res) {
                 sendGenericMessage(sender)
                 continue
             } 
-            else if (text === '#praktikum' || text === '#Praktikum') {
+            else if (text === 'praktikum' || text === 'Praktikum') {
                 sendPraktikumMessage(sender)
                 continue
             }
-            else if (text === '#einstieg' || text === '#Einstieg') {
+            else if (text === 'einstieg' || text === 'Einstieg') {
                 sendEinstiegMessage(sender)
                 continue
             }
@@ -77,22 +77,19 @@ function sendTextMessage(sender, text) {
 
 function sendGenericMessage(sender) {
     messageData = {
-        text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch.\nIch kann dich über einige Dinge sofort informieren:\n1. #praktikum\n2. #einstieg\noder schreibe @daniel um direkt mit Daniel zu chatten.",
+        text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch.\nIch kann dich über einige Dinge sofort informieren:\noder schreibe @daniel um direkt mit Daniel zu chatten.",
         quick_replies: [
         {
           "content_type":"text",
           "title":"Praktikum",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION"
         },
         {
           "content_type":"text",
           "title":"Einstieg",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY"
         },
         {
           "content_type":"text",
           "title":"Über Daniel",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
         }
     ]
     }
