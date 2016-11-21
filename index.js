@@ -49,7 +49,7 @@ app.post('/webhook/', function (req, res) {
                 sendAboutMessage(sender)
                 continue
             }
-            sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde sofort Daniel fragen... :)")
+            sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde dafür Daniel fragen... :).\nBei diesen Dingen kann ich dir gerne sofort helfen:")
         }
     }
     res.sendStatus(200)
@@ -59,7 +59,24 @@ var token = "EAAFKotdMmt4BACFX4ZA6xPC4hOKZBrbTZAX5foCEKva2KMlXOGGq2DelsWOQDZBCpU
 
 function sendTextMessage(sender, text) {
     messageData = {
-        text:text
+        text:text,
+        quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Praktikum",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Praktikum"
+        },
+        {
+          "content_type":"text",
+          "title":"Einstieg",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+        },
+        {
+          "content_type":"text",
+          "title":"Über Daniel",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
+        }
+    ]
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
