@@ -44,6 +44,10 @@ app.post('/webhook/', function (req, res) {
             else if (text === 'einstieg' || text === 'Einstieg') {
                 sendEinstiegMessage(sender)
                 continue
+            }            
+            else if (text === 'Über Daniel') {
+                sendEinstiegMessage(sender)
+                continue
             }
             sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde sofort Daniel fragen... :)")
         }
@@ -137,6 +141,27 @@ function sendPraktikumMessage(sender) {
 function sendEinstiegMessage(sender) {
     messageData = {
         text: "Studium fertig? Perfekt! Daniel sucht gerade Absolventen in folgenden Bereichen:\nTee kochen\nWäsche waschen\nBier brauen\nInteressiert dich ein Bereich? Dann schreibe das am besten mit @daniel direkt an Daniel."        
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendEinstiegMessage(sender) {
+    messageData = {
+        text: "Daniel ist ein professioneller Facebook Developer und hat mich am 15.11.2016 ins Leben gerufen."        
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
