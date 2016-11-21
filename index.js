@@ -49,7 +49,7 @@ app.post('/webhook/', function (req, res) {
                 sendAboutMessage(sender)
                 continue
             }
-            sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde dafür Daniel fragen... :).\nBei diesen Dingen kann ich dir gerne sofort helfen:")
+            sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde für dich bei Daniel nachfragen... :).\nBei diesen Dingen kann ich dir gerne sofort helfen:")
         }
     }
     res.sendStatus(200)
