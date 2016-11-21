@@ -94,6 +94,7 @@ function sendGenericMessage(sender) {
           "title":"Über Daniel",
           "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_DRAMA"
         }
+    ]
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
