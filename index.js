@@ -82,14 +82,17 @@ function sendGenericMessage(sender) {
         {
           "content_type":"text",
           "title":"Praktikum",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Praktikum"
         },
         {
           "content_type":"text",
           "title":"Einstieg",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
         },
         {
           "content_type":"text",
           "title":"Über Daniel",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
         }
     ]
     }
