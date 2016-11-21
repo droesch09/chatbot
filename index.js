@@ -237,7 +237,7 @@ function sendAboutMessage(sender) {
     })
 }
 
-function sendAboutMessage(sender) {
+function sendDanielMessage(sender) {
     messageData = {
         text: "Ich habe dein Anliegen an Daniel weitergeleitet. Er wird sich bald bei dir melden. Kann ich solange etwas anderes für dich tun?",
          quick_replies: [
