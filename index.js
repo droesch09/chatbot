@@ -49,6 +49,10 @@ app.post('/webhook/', function (req, res) {
                 sendAboutMessage(sender)
                 continue
             }
+            else if (text.includes('@daniel') || text.includes('@Daniel')) {
+                sendDanielMessage(sender)
+                continue
+            }
             sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde für dich bei Daniel nachfragen... :).\nBei diesen Dingen kann ich dir gerne sofort helfen:")
         }
     }
@@ -213,6 +217,44 @@ function sendAboutMessage(sender) {
           "content_type":"text",
           "title":"Einstieg",
             "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+        }
+    ]
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendAboutMessage(sender) {
+    messageData = {
+        text: "Ich habe dein Anliegen an Daniel weitergeleitet. Er wird sich bald bei dir melden. Kann ich solange etwas anderes für dich tun?",
+         quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Praktikum",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Praktikum"
+        },
+        {
+          "content_type":"text",
+          "title":"Einstieg",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+        },
+        {
+          "content_type":"text",
+          "title":"Über Daniel",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
         }
     ]
     }
