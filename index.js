@@ -39,6 +39,7 @@ app.post('/webhook/', function (req, res) {
             } 
             else if (text === 'praktikum' || text === 'Praktikum') {
                 sendPraktikumMessage(sender)
+                sendPraktikumMessage2(sender)
                 continue
             }
             else if (text === 'einstieg' || text === 'Einstieg') {
@@ -171,6 +172,39 @@ function sendPraktikumMessage(sender) {
     })
 }
 
+function sendPraktikumMessage2(sender) {
+    messageData = {
+        text:getPorscheURL("5", "114"),
+        quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Einstieg",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+        },
+        {
+          "content_type":"text",
+          "title":"Über Daniel",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
+        }
+    ]
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
 function sendEinstiegMessage(sender) {
     messageData = {
         text: "Studium fertig? Perfekt! Daniel sucht gerade Absolventen in folgenden Bereichen:\nTee kochen\nWäsche waschen\nBier brauen\nInteressiert dich ein Bereich? Dann schreibe das am besten mit @daniel direkt an Daniel.",
@@ -273,6 +307,12 @@ function sendDanielMessage(sender) {
             console.log('Error: ', response.body.error)
         }
     })
+}
+
+function getPorscheURL(entryLevel, activityLevel){
+    String URL "https://jobs.porsche.com/index.php?ac=search_result&ac=search_result&search_parameter_page_current=1&hitsperpage=10&search_parameter_order_criterion=date&search_parameter_order_direction=DESC&search_criterion_keyword=&search_criterion_activity_level=" + activityLevel + "&search_criterion_entry_level=" + entryLevel + "&search_criterion_country=&search_criterion_physical_location=&search_criterion_division=&btn_dosearch=1000+Treffer+#search-options"
+    
+    return URL;
 }
 
 // Spin up the server
