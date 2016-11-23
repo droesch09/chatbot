@@ -102,7 +102,7 @@ function sendTextMessage(sender, text) {
 
 function sendGenericMessage(sender) {
     messageData = {
-        text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch.\nIch kann dich über einige Dinge sofort informieren:\noder schreibe @daniel um direkt mit Daniel zu chatten.",
+        text:"Hallo, ich bin Mr. Career und arbeite für Porsche.\nIch kann dich über die unten stehenden Themen sofort informieren.\noder schreibe @help um direkt mit einem Porsche Mitarbeiter zu chatten.",
         quick_replies: [
         {
           "content_type":"text",
@@ -116,7 +116,7 @@ function sendGenericMessage(sender) {
         },
         {
           "content_type":"text",
-          "title":"Über Daniel",
+          "title":"Über Porsche",
             "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
         }
     ]
@@ -173,8 +173,9 @@ function sendPraktikumMessage(sender) {
 
 function sendPraktikumMessage2(sender) {
     var url = getPorscheURL("5", "114");
+    console.log(url);
     messageData = {
-        text:this.url,
+        text:url,
         quick_replies: [
         {
           "content_type":"text",
