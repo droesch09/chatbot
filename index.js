@@ -209,6 +209,21 @@ function sendPraktikumURL(sender, activityLevel) {
     messageData = {
         text:url,
         quick_replies: [
+                {
+          "content_type":"text",
+          "title":"Connected Car",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+        },
+        {
+          "content_type":"text",
+          "title":"Entwicklung",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
+        },    
+        {
+          "content_type":"text",
+          "title":"IT",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
+        },     
         {
           "content_type":"text",
           "title":"Einstieg",
