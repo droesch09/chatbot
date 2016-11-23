@@ -145,7 +145,7 @@ function sendPraktikumMessage(sender) {
         {
           "content_type":"text",
           "title":"Connected Car",
-            "payload":sendPraktikumMessage2(sender)
+            "payload":"asdf"
         },
         {
           "content_type":"text",
