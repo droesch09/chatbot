@@ -103,7 +103,7 @@ function sendTextMessage(sender, text) {
 
 function sendGenericMessage(sender) {
     messageData = {
-        text:"Hallo, ich bin Mr. Career und arbeite für Porsche.\nIch kann dich über die unten stehenden Themen sofort informieren.\noder schreibe @help um direkt mit einem Porsche Mitarbeiter zu chatten.",
+        text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch.\nIch kann dich über einige Dinge sofort informieren:\noder schreibe @daniel um direkt mit Daniel zu chatten.",
         quick_replies: [
         {
           "content_type":"text",
@@ -141,11 +141,26 @@ function sendGenericMessage(sender) {
 
 function sendPraktikumMessage(sender) {
     messageData = {
-        text:"Daniel benötigt gerade unbedingt Unterstützung in folgenden Bereichen:\nTee kochen\nWäsche waschen\nBier brauen\nInteressiert dich ein Bereich? Dann schreibe das am besten mit @daniel direkt an Daniel.",
+        text:"Daniel benötigt gerade unbedingt Unterstützung einigen Bereichen.\nWähle einfach unten den Bereich aus, der dich interessiert und ich zeige dir passende Stellen.",
         quick_replies: [
         {
           "content_type":"text",
-          "title":"Einstieg",
+          "title":"Connected Car",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+        },
+        {
+          "content_type":"text",
+          "title":"Entwicklung",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+        },   
+        {
+          "content_type":"text",
+          "title":"IT",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+        },   
+        {
+          "content_type":"text",
+          "title":"E-Mobility",
             "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
         },
         {
