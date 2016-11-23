@@ -173,7 +173,7 @@ function sendPraktikumMessage(sender) {
 }
 
 function sendPraktikumMessage2(sender) {
-    String URL = getPorscheURL("5", "114");
+    var URL = getPorscheURL("5", "114");
     messageData = {
         text:URL,
         quick_replies: [
