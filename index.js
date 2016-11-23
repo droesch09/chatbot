@@ -106,7 +106,7 @@ function sendTextMessage(sender, text) {
 
 function sendGenericMessage(sender) {
     messageData = {
-        text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch.\nIch kann dich über einige Dinge sofort informieren:\noder schreibe @daniel um direkt mit Daniel zu chatten.",
+        text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch :).\nIch kann dich über einige Dinge sofort informieren:\noder schreibe @daniel um direkt mit Daniel zu chatten.",
         quick_replies: [
         {
           "content_type":"text",
@@ -144,7 +144,7 @@ function sendGenericMessage(sender) {
 
 function sendPraktikumMessage(sender) {
     messageData = {
-        text:"Daniel benötigt gerade unbedingt Unterstützung einigen Bereichen.\nWähle einfach unten den Bereich aus, der dich interessiert und ich zeige dir passende Stellen.",
+        text:"Daniel benötigt gerade unbedingt Unterstützung einigen Bereichen.\nWähle einfach den Bereich aus, der dich interessiert und ich zeige dir passende Stellen.",
         quick_replies: [
         {
           "content_type":"text",
@@ -204,7 +204,7 @@ function sendPraktikumURL(sender, activityLevel) {
     default:
         url = getPorscheURL("5", "108");
 }
-    url += "\n was kann ich als nächstes für dich tun?";
+    url += "\nWas kann ich als nächstes für dich tun?";
     
     console.log(url);
     messageData = {
