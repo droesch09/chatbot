@@ -202,7 +202,7 @@ function sendPraktikumURL(sender, activityLevel) {
         url = getPorscheURL("5", "130");
         break;
     default:
-        default url = getPorscheURL("5", "108");
+        url = getPorscheURL("5", "108");
 }
 
     console.log(url);
