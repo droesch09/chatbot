@@ -49,6 +49,10 @@ app.post('/webhook/', function (req, res) {
                 sendAboutMessage(sender)
                 continue
             }
+            else if (text === 'Connected Car' || text === 'Entwicklung' || text === 'IT') {
+                sendPraktikumURL(sender, text)
+                continue
+            }
             else if (text.includes('@daniel') || text.includes('@Daniel')) {
                 sendDanielMessage(sender)
                 continue
@@ -145,7 +149,7 @@ function sendPraktikumMessage(sender) {
         {
           "content_type":"text",
           "title":"Connected Car",
-            "payload":"Einstieg"
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
         },
         {
           "content_type":"text",
@@ -186,8 +190,21 @@ function sendPraktikumMessage(sender) {
     })
 }
 
-function sendPraktikumMessage2(sender) {
+function sendPraktikumURL(sender, activityLevel) {
+    
     var url = getPorscheURL("5", "141");
+    
+    switch(activityLevel) {
+    case "Connected Car":
+        url = getPorscheURL("5", "141");
+        break;
+    case "IT":
+        url = getPorscheURL("5", "130");
+        break;
+    default:
+        default url = getPorscheURL("5", "108");
+}
+
     console.log(url);
     messageData = {
         text:url,
