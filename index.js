@@ -192,7 +192,7 @@ function sendPraktikumMessage(sender) {
 
 function sendPraktikumURL(sender, activityLevel) {
     
-    var url = getPorscheURL("5", "141") + "\n was kann ich als nächstes für dich tun?";
+    var url = getPorscheURL("5", "141");
     
     switch(activityLevel) {
     case "Connected Car":
@@ -204,7 +204,8 @@ function sendPraktikumURL(sender, activityLevel) {
     default:
         url = getPorscheURL("5", "108");
 }
-
+    url += "\n was kann ich als nächstes für dich tun?";
+    
     console.log(url);
     messageData = {
         text:url,
