@@ -192,7 +192,7 @@ function sendPraktikumMessage(sender) {
 
 function sendPraktikumURL(sender, activityLevel) {
     
-    var url = getPorscheURL("5", "141");
+    var url = getPorscheURL("5", "141") + "\n was kann ich als nächstes für dich tun?";
     
     switch(activityLevel) {
     case "Connected Car":
@@ -358,7 +358,7 @@ function sendDanielMessage(sender) {
 }
 
 function getPorscheURL(entryLevel, activityLevel){
-    return "https://jobs.porsche.com/index.php?ac=search_result&ac=search_result&search_criterion_activity_level=" + activityLevel + "&search_criterion_entry_level=" + entryLevel + "&btn_dosearch=1000+Treffer+#search-options";
+    return "https://jobs.porsche.com/index.php?ac=search_result&search_criterion_activity_level=" + activityLevel + "&search_criterion_entry_level=" + entryLevel;
 }
 
 // Spin up the server
