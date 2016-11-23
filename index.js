@@ -145,7 +145,7 @@ function sendPraktikumMessage(sender) {
         {
           "content_type":"text",
           "title":"Connected Car",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+            "payload":sendPraktikumMessage2(sender)
         },
         {
           "content_type":"text",
@@ -159,7 +159,7 @@ function sendPraktikumMessage(sender) {
         },   
         {
           "content_type":"text",
-          "title":"E-Mobility",
+          "title":"Einstieg",
             "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
         },
         {
