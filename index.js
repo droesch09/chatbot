@@ -106,7 +106,7 @@ function sendTextMessage(sender, text) {
 
 function sendGenericMessage(sender) {
     messageData = {
-        text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch :).\nIch kann dich über einige Dinge sofort informieren:\noder schreibe @daniel um direkt mit Daniel zu chatten.",
+        text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch :).\nIch kann dich über einige Dinge sofort informieren:\noder schreibe @daniel um direkt mit Daniel zu chatten. TEST",
         quick_replies: [
         {
           "content_type":"text",
