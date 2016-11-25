@@ -38,7 +38,8 @@ app.post('/webhook/', function (req, res) {
                 sendGenericMessage(sender)
                 continue
             } 
-            else if (payload === 'EinstiegBeiPorsche1') {
+            else if (payload === "EinstiegBeiPorsche1") {
+                console.log(payload)
                 sendEinstiegBeiPorscheMessage(sender)
                 continue
             }
