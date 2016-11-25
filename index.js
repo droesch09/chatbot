@@ -33,13 +33,11 @@ app.post('/webhook/', function (req, res) {
         sender = event.sender.id
         if (event.message && event.message.text) {
             text = event.message.text
-            payload = event.postback.payload
-            console.log(payload)
             if (text.includes('Hello') || text.includes('Hi') || text.includes('hi') || text.includes('Hallo') || text.includes('hallo') || text.includes('hello') || text.includes('Hey') || text.includes('hey')) {
                 sendGenericMessage(sender)
                 continue
             } 
-            else if (payload === "EinstiegBeiPorsche1") {
+            else if (text === "Einstieg bei Porsche") {
                 sendEinstiegBeiPorscheMessage(sender)
                 continue
             }
