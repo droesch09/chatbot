@@ -33,28 +33,17 @@ app.post('/webhook/', function (req, res) {
         sender = event.sender.id
         if (event.message && event.message.text) {
             text = event.message.text
+            payload = event.message.payload
             if (text.includes('Hello') || text.includes('Hi') || text.includes('hi') || text.includes('Hallo') || text.includes('hallo') || text.includes('hello') || text.includes('Hey') || text.includes('hey')) {
                 sendGenericMessage(sender)
                 continue
             } 
-            else if (text === 'praktikum' || text === 'Praktikum') {
-                sendPraktikumMessage(sender)
+            else if (payload === 'Einstieg bei Porsche1') {
+                sendEinstiegBeiPorscheMessage(sender)
                 continue
             }
-            else if (text === 'einstieg' || text === 'Einstieg') {
-                sendEinstiegMessage(sender)
-                continue
-            }            
-            else if (text === 'Über Daniel') {
-                sendAboutMessage(sender)
-                continue
-            }
-            else if (text === 'Connected Car' || text === 'Entwicklung' || text === 'IT') {
-                sendPraktikumURL(sender, text)
-                continue
-            }
-            else if (text.includes('@daniel') || text.includes('@Daniel')) {
-                sendDanielMessage(sender)
+            else if (text.includes('@Help') || text.includes('@help')) {
+                sendHelpMessage(sender)
                 continue
             }
             sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde für dich bei Daniel nachfragen... :).\nBei diesen Dingen kann ich dir gerne sofort helfen:")
@@ -106,22 +95,22 @@ function sendTextMessage(sender, text) {
 
 function sendGenericMessage(sender) {
     messageData = {
-        text:"Hallo, ich bin Mr. Career und arbeite für Daniel Rösch :).\nIch kann dich über einige Dinge sofort informieren:\noder schreibe @daniel um direkt mit Daniel zu chatten. TEST",
+        text:"Hallo, ich bin Mr. Career und arbeite für Porsche.\nIch kann dich über einige Dinge sofort informieren. Tippe dazu einfach auf einen der Vorschläge weiter unten.\noder schreibe @hilfe um direkt mit einem Mitarbeiter zu chatten.",
         quick_replies: [
         {
           "content_type":"text",
-          "title":"Praktikum",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Praktikum"
-        },
-        {
-          "content_type":"text",
-          "title":"Einstieg",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+          "title":"Einstieg bei Porsche",
+            "payload":"EinstiegBeiPorsche1"
         },
         {
           "content_type":"text",
           "title":"Über Porsche",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
+            "payload":"ÜberPorsche1"
+        },
+        {
+          "content_type":"text",
+          "title":"Events",
+            "payload":"Events1"
         }
     ]
     }
@@ -142,34 +131,64 @@ function sendGenericMessage(sender) {
     })
 }
 
-function sendPraktikumMessage(sender) {
+function sendEinstiegBeiPorscheMessage(sender) {
     messageData = {
-        text:"Daniel benötigt gerade unbedingt Unterstützung einigen Bereichen.\nWähle einfach den Bereich aus, der dich interessiert und ich zeige dir passende Stellen.",
+        text:"Schön, dass du dich für einen Einstieg bei Porsche interessierst :) Wähle nun eine Einstiegsart aus.",
         quick_replies: [
         {
           "content_type":"text",
-          "title":"Connected Car",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+          "title":"Praktikum",
+            "payload":"Praktikum2"
         },
         {
           "content_type":"text",
-          "title":"Entwicklung",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+          "title":"Abschlussarbeit",
+            "payload":"Abschlussarbeit2"
         },   
         {
           "content_type":"text",
-          "title":"IT",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+          "title":"Schülerpraktikum",
+            "payload":"Schülerpraktikum2"
         },   
         {
           "content_type":"text",
-          "title":"Einstieg",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+          "title":"Vorpraktikum",
+            "payload":"Vorpraktikum2"
         },
         {
           "content_type":"text",
-          "title":"Über Daniel",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
+          "title":"Aushilfe",
+            "payload":"Aushilfe2"
+        },
+                    
+        {"content_type":"text",
+          "title":"Werkstudent",
+            "payload":"Werkstudent2"
+        },
+        {
+          "content_type":"text",
+          "title":"Fachkraft",
+            "payload":"Fachkraft2"
+        },   
+        {
+          "content_type":"text",
+          "title":"Absolvent",
+            "payload":"Absolvent2"
+        },   
+        {
+          "content_type":"text",
+          "title":"Young Professional",
+            "payload":"YoungProfessional2"
+        },
+        {
+          "content_type":"text",
+          "title":"Ausbildung",
+            "payload":"Ausbildung2"
+        },
+        {
+          "content_type":"text",
+          "title":"Duales Studium",
+            "payload":"DualesStudium2"
         }
     ]
     }
@@ -254,75 +273,10 @@ function sendPraktikumURL(sender, activityLevel) {
     })
 }
 
-function sendEinstiegMessage(sender) {
-    messageData = {
-        text: "Studium fertig? Perfekt! Daniel sucht gerade Absolventen in folgenden Bereichen:\nTee kochen\nWäsche waschen\nBier brauen\nInteressiert dich ein Bereich? Dann schreibe das am besten mit @daniel direkt an Daniel.",
-         quick_replies: [
-        {
-          "content_type":"text",
-          "title":"Praktikum",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Praktikum"
-        },
-        {
-          "content_type":"text",
-          "title":"Über Daniel",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
-        }
-    ]
-    }
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token:token},
-        method: 'POST',
-        json: {
-            recipient: {id:sender},
-            message: messageData,
-        }
-    }, function(error, response, body) {
-        if (error) {
-            console.log('Error sending messages: ', error)
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error)
-        }
-    })
-}
 
-function sendAboutMessage(sender) {
+function sendHelpMessage(sender) {
     messageData = {
-        text: "Daniel ist ein professioneller Facebook Developer und hat mich am 15.11.2016 ins Leben gerufen. Erfahre mehr über Daniel und seine Projekte auf https://github.com/droesch09",
-         quick_replies: [
-        {
-          "content_type":"text",
-          "title":"Praktikum",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Praktikum"
-        },
-        {
-          "content_type":"text",
-          "title":"Einstieg",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
-        }
-    ]
-    }
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token:token},
-        method: 'POST',
-        json: {
-            recipient: {id:sender},
-            message: messageData,
-        }
-    }, function(error, response, body) {
-        if (error) {
-            console.log('Error sending messages: ', error)
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error)
-        }
-    })
-}
-
-function sendDanielMessage(sender) {
-    messageData = {
-        text: "Ich habe dein Anliegen an Daniel weitergeleitet. Er wird sich bald bei dir melden. Kann ich solange etwas anderes für dich tun?",
+        text: "Ich habe dein Anliegen an einen unserer Mitarbeiter weitergeleitet. Dieser wird sich bald bei dir melden. Kann ich solange etwas anderes für dich tun?",
          quick_replies: [
         {
           "content_type":"text",
