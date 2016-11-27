@@ -546,25 +546,24 @@ messageData = {
             "payload": {
                 "template_type": "list",
                 "elements": [{
-                    "title": "Unternehmenswerte und Kultur",
+                    "title": "Praktikum bei Porsche",
                     "subtitle": "Porsche ist ein einzigartiges Unternehmen mit starken Idealen.",
-                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-employer-values-teaser/preview/52877809-ab83-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
+                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-yourentry-students-practicaltraining-banner/normal/3d1cec69-a85c-11e4-b849-001a64c55f5c/porsche-normal.jpg",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/values/",
-                        "title": "Gehe zu Unternehmenswerte und Kultur"
+                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/students/practicaltraining/",
+                        "title": "Gehe zu Praktikum"
                     }],
                 }, {
-                    "title": "Beruf und Familie",
+                    "title": "Connected Car",
                     "subtitle": "Mit vielfältigen Angeboten unterstützen wir unsere Mitarbeiter dabei, die Ansprüche von Beruf und Privatleben in Einklang zu bringen.",
-                    "image_url": "http://files1.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-employer-family-teaser/preview/69c34bea-bc35-11e4-a19d-001a64c55f5c;s3/porsche-preview.jpg",
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/family/",
                         "title": "Gehe zu Beruf und Familie"
                     }],
                 },{
-                    "title": "Chancengleichheit und Vielfalt",
+                    "title": "Entwicklung",
                     "subtitle": "Die Gleichbehandlung von Frauen und Männern in der Arbeitswelt ist Porsche in besonderes Anliegen.",
                     "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-employer-equalopportunities-teaser/preview/67e3524d-ab83-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
                     "buttons": [{
