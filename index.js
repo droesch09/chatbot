@@ -540,111 +540,54 @@ function sendPorscheAlsArbeitgeberMessage(sender) {
 }
 
 function sendPraktikumMessage(sender) {
-    messageData = {
-    "attachment": {
-        "type": "template",
-        "payload": {
-            "template_type": "list",
-            "elements": [
-                {
-                    "title": "Classic T-Shirt Collection",
-                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-employer-equalopportunities-teaser/preview/67e3524d-ab83-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
-                    "subtitle": "See all our colors",
-                    "default_action": {
+messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "list",
+                "elements": [{
+                    "title": "Unternehmenswerte und Kultur",
+                    "subtitle": "Porsche ist ein einzigartiges Unternehmen mit starken Idealen.",
+                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-employer-values-teaser/preview/52877809-ab83-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
+                    "buttons": [{
                         "type": "web_url",
-                        "url": "https://jobs.porsche.com/",
-                        "messenger_extensions": true,
-                        "webview_height_ratio": "tall",
-                        "fallback_url": "https://jobs.porsche.com/"
-                    },
-                    "buttons": [
-                        {
-                            "title": "View",
-                            "type": "web_url",
-                            "url": "https://jobs.porsche.com/",
-                            "messenger_extensions": true,
-                            "webview_height_ratio": "tall",
-                            "fallback_url": "https://jobs.porsche.com/"                        
-                        }
-                    ]
-                },
-                {
-                    "title": "Classic White T-Shirt",
-                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-employer-equalopportunities-teaser/preview/67e3524d-ab83-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
-                    "subtitle": "100% Cotton, 200% Comfortable",
-                    "default_action": {
+                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/values/",
+                        "title": "Gehe zu Unternehmenswerte und Kultur"
+                    }, {
+                        "type": "postback",
+                        "title": "Zurück",
+                        "payload": "Payload for first element in a generic bubble",
+                    }],
+                }, {
+                    "title": "Beruf und Familie",
+                    "subtitle": "Mit vielfältigen Angeboten unterstützen wir unsere Mitarbeiter dabei, die Ansprüche von Beruf und Privatleben in Einklang zu bringen.",
+                    "image_url": "http://files1.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-employer-family-teaser/preview/69c34bea-bc35-11e4-a19d-001a64c55f5c;s3/porsche-preview.jpg",
+                    "buttons": [{
                         "type": "web_url",
-                        "url": "https://jobs.porsche.com/",
-                        "messenger_extensions": true,
-                        "webview_height_ratio": "tall",
-                        "fallback_url": "https://jobs.porsche.com/"
-                    },
-                    "buttons": [
-                        {
-                            "title": "Shop Now",
-                            "type": "web_url",
-                            "url": "hhttps://jobs.porsche.com/",
-                            "messenger_extensions": true,
-                            "webview_height_ratio": "tall",
-                            "fallback_url": "https://jobs.porsche.com/"                        
-                        }
-                    ]                
-                },
-                {
-                    "title": "Classic Blue T-Shirt",
+                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/family/",
+                        "title": "Gehe zu Beruf und Familie"
+                    },{
+                        "type": "postback",
+                        "title": "Zurück",
+                        "payload": "Payload for first element in a generic bubble",
+                    }],
+                },{
+                    "title": "Chancengleichheit und Vielfalt",
+                    "subtitle": "Die Gleichbehandlung von Frauen und Männern in der Arbeitswelt ist Porsche in besonderes Anliegen.",
                     "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-employer-equalopportunities-teaser/preview/67e3524d-ab83-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
-                    "subtitle": "100% Cotton, 200% Comfortable",
-                    "default_action": {
+                    "buttons": [{
                         "type": "web_url",
-                        "url": "https://jobs.porsche.com/",
-                        "messenger_extensions": true,
-                        "webview_height_ratio": "tall",
-                        "fallback_url": "https://jobs.porsche.com/"
-                    },
-                    "buttons": [
-                        {
-                            "title": "Shop Now",
-                            "type": "web_url",
-                            "url": "https://jobs.porsche.com/",
-                            "messenger_extensions": true,
-                            "webview_height_ratio": "tall",
-                            "fallback_url": "https://jobs.porsche.com/"                        
-                        }
-                    ]                
-                },
-                {
-                    "title": "Classic Black T-Shirt",
-                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-employer-equalopportunities-teaser/preview/67e3524d-ab83-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
-                    "subtitle": "100% Cotton, 200% Comfortable",
-                    "default_action": {
-                        "type": "web_url",
-                        "url": "https://jobs.porsche.com/",
-                        "messenger_extensions": true,
-                        "webview_height_ratio": "tall",
-                        "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-                    },
-                    "buttons": [
-                        {
-                            "title": "Shop Now",
-                            "type": "web_url",
-                            "url": "https://peterssendreceiveapp.ngrok.io/shop?item=102",
-                            "messenger_extensions": true,
-                            "webview_height_ratio": "tall",
-                            "fallback_url": "https://jobs.porsche.com/"                        
-                        }
-                    ]                
-                }
-            ],
-             "buttons": [
-                {
-                    "title": "View More",
-                    "type": "postback",
-                    "payload": "payload"                        
-                }
-            ]  
+                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/equalopportunities/",
+                        "title": "Gehe zu Chancengleichheit und Vielfalt"
+                    }, {
+                        "type": "postback",
+                        "title": "Zurück",
+                        "payload": "Payload for first element in a generic bubble",
+                    }],
+                }]
+            }
         }
     }
-}
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
