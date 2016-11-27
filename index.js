@@ -484,9 +484,9 @@ function sendPorscheAlsArbeitgeberMessage(sender) {
                         "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/values/",
                         "title": "Gehe zu Unternehmenswerte und Kultur"
                     }, {
-                        "type": "text",
+                        "type": "postback",
                         "title": "Zurück",
-                        "payload": "Zurück",
+                        "payload": "Payload for first element in a generic bubble",
                     }],
                 }, {
                     "title": "Beruf und Familie",
