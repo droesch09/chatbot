@@ -378,7 +378,7 @@ function sendPorscheImProfilMessage(sender) {
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.porsche.com/germany/aboutporsche/jobs/profile/myth/",
-                        "title": "web url"
+                        "title": "Gehe zu Mythos Porsche"
                     }, {
                         "type": "postback",
                         "title": "Zurück",
@@ -400,7 +400,7 @@ function sendPorscheImProfilMessage(sender) {
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.porsche.com/germany/aboutporsche/jobs/profile/mission-e/",
-                        "title": "web url"
+                        "title": "Gehe zu Mission E"
                     }, {
                         "type": "postback",
                         "title": "Zurück",
