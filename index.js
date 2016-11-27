@@ -553,10 +553,6 @@ messageData = {
                         "type": "web_url",
                         "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/values/",
                         "title": "Gehe zu Unternehmenswerte und Kultur"
-                    }, {
-                        "type": "postback",
-                        "title": "Zurück",
-                        "payload": "Payload for first element in a generic bubble",
                     }],
                 }, {
                     "title": "Beruf und Familie",
@@ -566,10 +562,6 @@ messageData = {
                         "type": "web_url",
                         "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/family/",
                         "title": "Gehe zu Beruf und Familie"
-                    },{
-                        "type": "postback",
-                        "title": "Zurück",
-                        "payload": "Payload for first element in a generic bubble",
                     }],
                 },{
                     "title": "Chancengleichheit und Vielfalt",
@@ -579,10 +571,6 @@ messageData = {
                         "type": "web_url",
                         "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/equalopportunities/",
                         "title": "Gehe zu Chancengleichheit und Vielfalt"
-                    }, {
-                        "type": "postback",
-                        "title": "Zurück",
-                        "payload": "Payload for first element in a generic bubble",
                     }],
                 }]
             }
