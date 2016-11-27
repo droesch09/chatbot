@@ -373,7 +373,7 @@ function sendPorscheImProfilMessage(sender) {
                 "template_type": "generic",
                 "elements": [{
                     "title": "Mythos Porsche",
-                    "subtitle": "Was macht einen Sportwagenhersteller so wertvoll, dass man sogar vom \"Mythos Porsche\" spricht?",
+                    "subtitle": "Was macht",
                     "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-myth-teaser/preview/d3b7e4fa-aad5-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
                     "buttons": [{
                         "type": "Gehe zu Mythos Porsche",
