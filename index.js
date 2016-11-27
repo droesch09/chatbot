@@ -61,7 +61,7 @@ app.post('/webhook/', function (req, res) {
                         sendPraktikumMessage(sender)
                         continue
                     }
-                    else if (text.includes('@Help') || text.includes('@help')) || text.includes('@hilfe')) || text.includes('@Hilfe')) {
+                    else if (text.includes('@Help') || text.includes('@help') || text.includes('@hilfe') || text.includes('@Hilfe')) {
                         sendHelpMessage(sender)
                         continue
                     }
