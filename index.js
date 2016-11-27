@@ -31,30 +31,29 @@ app.post('/webhook/', function (req, res) {
     for (i = 0; i < messaging_events.length; i++) {
         event = req.body.entry[0].messaging[i]
         sender = event.sender.id
-        if (event.postback && event.postback.payload){
-            payload = event.postback.payload
-            console.log(payload)
-            if (payload.includes("EinstiegbeiPorsche1")){
-                sendEinstiegBeiPorscheMessage(sender)
-                continue
-            }
-            
-        }
-        else if (event.message && event.message.text) {
+        if (event.message && event.message.text) {
                     text = event.message.text
                     if (text.includes('Hello') || text.includes('Hi') || text.includes('hi') || text.includes('Hallo') || text.includes('hallo') || text.includes('hello') || text.includes('Hey') || text.includes('hey')) {
                         sendGenericMessage(sender)
                         continue
                     } 
-                    else if (text === "aEinstieg bei Porsche") {
+                    else if (text === "Einstieg bei Porsche") {
                         sendEinstiegBeiPorscheMessage(sender)
+                        continue
+                    }
+                    else if (text === "Über Porsche") {
+                        sendÜberPorscheMessage(sender)
+                        continue
+                    }
+                    else if (text === "Events") {
+                        sendEventsMessage(sender)
                         continue
                     }
                     else if (text.includes('@Help') || text.includes('@help')) {
                         sendHelpMessage(sender)
                         continue
                     }
-                    sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde für dich bei Daniel nachfragen... :).\nBei diesen Dingen kann ich dir gerne sofort helfen:")
+                    sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde für dich bei einem Mitarbeiter nachfragen... :).\nBei diesen Dingen kann ich dir gerne sofort helfen:")
             }
     }
     res.sendStatus(200)
@@ -67,21 +66,21 @@ var token = "EAAFKotdMmt4BACFX4ZA6xPC4hOKZBrbTZAX5foCEKva2KMlXOGGq2DelsWOQDZBCpU
 function sendTextMessage(sender, text) {
     messageData = {
         text:text,
-        quick_replies: [
+               quick_replies: [
         {
           "content_type":"text",
-          "title":"Praktikum",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Praktikum"
+          "title":"Einstieg bei Porsche",
+            "payload":"EinstiegBeiPorsche1"
         },
         {
           "content_type":"text",
-          "title":"Einstieg",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+          "title":"Über Porsche",
+            "payload":"ÜberPorsche1"
         },
         {
           "content_type":"text",
-          "title":"Über Daniel",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
+          "title":"Events",
+            "payload":"Events1"
         }
     ]
     }
@@ -141,6 +140,7 @@ function sendGenericMessage(sender) {
     })
 }
 
+//---------------------------------Ebene 1---------------------------------
 function sendEinstiegBeiPorscheMessage(sender) {
     messageData = {
         text:"Schön, dass du dich für einen Einstieg bei Porsche interessierst :) Wähle nun eine Einstiegsart aus.",
@@ -219,6 +219,62 @@ function sendEinstiegBeiPorscheMessage(sender) {
     })
 }
 
+function sendÜberPorscheMessage(sender) {
+    messageData = {
+        text:"Schön, dass du dich für Porsche interessierst. Über was kann ich dich informieren?",
+        quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Porsche im Profil",
+            "payload":"PorscheImProfil1"
+        },
+        {
+          "content_type":"text",
+          "title":"Porsche als Arbeitsgeber",
+            "payload":"PorscheAlsArbeitgeber1"
+        }
+    ]
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendEventsMessage(sender) {
+    messageData = {
+        text:"Du suchst das persönliche Gespräch mit uns? Wir sind bei einer Vielzahl von Veranstaltungen vor Ort und freuen uns, dich kennenzulernen.",
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+
+//---------------------------------Ebene 2---------------------------------
 function sendPraktikumURL(sender, activityLevel) {
     
     var url = getPorscheURL("5", "141");
