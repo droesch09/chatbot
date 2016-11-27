@@ -151,8 +151,7 @@ function sendGenericMessage(sender) {
           "title":"Events",
             "payload":"Events1"
         }
-        ],
-        sender_action: "typing_on"
+        ]
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
