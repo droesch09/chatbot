@@ -302,8 +302,8 @@ function sendTemplateMessage(sender) {
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                    "title": "First card",
-                    "subtitle": "Element #1 of an hscroll",
+                    "title": "Events",
+                    "subtitle": "Treffe uns",
                     "image_url": "http://files1.porsche.com/filestore/image/germany/none/rd-2015-jobsandcareer-events-teaser/preview/e73f281c-33c5-11e6-9225-0019999cd470;s3/porsche-preview.jpg",
                     "buttons": [{
                         "type": "web_url",
