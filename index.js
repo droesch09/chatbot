@@ -194,9 +194,9 @@ function sendHelpMessage(sender) {
     })
 }
 
-function sendHelpMessage(sender) {
+function sendZurueckMessage(sender) {
     messageData = {
-        text: "Ich habe dein Anliegen an einen unserer Mitarbeiter weitergeleitet. Dieser wird sich bald bei dir melden. Kann ich solange etwas anderes für dich tun?",
+        text: "Alles klar! Wie kann ich dir behilflich sein?",
         quick_replies: [
         {
           "content_type":"text",
