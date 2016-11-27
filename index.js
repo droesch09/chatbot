@@ -373,7 +373,7 @@ function sendPorscheImProfilMessage(sender) {
                 "template_type": "generic",
                 "elements": [{
                     "title": "Mythos Porsche",
-                    "subtitle": "Element #1 of an hscroll",
+                    "subtitle": "Was macht einen Sportwagenhersteller so wertvoll, dass man sogar vom \"Mythos Porsche\" spricht?",
                     "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
                         "type": "web_url",
@@ -386,7 +386,7 @@ function sendPorscheImProfilMessage(sender) {
                     }],
                 }, {
                     "title": "Auf Wachstumskurs",
-                    "subtitle": "Element #1 of an hscroll",
+                    "subtitle": "Im Rahmen der Unternehmensstrategie 2018 möchte Porsche den Fahrzeugabsatz auf 200.000 Einheiten pro Jahr steigern.",
                     "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
                         "type": "web_url",
@@ -398,8 +398,8 @@ function sendPorscheImProfilMessage(sender) {
                         "payload": "Payload for first element in a generic bubble",
                     }],
                 },{
-                    "title": "Auf dem Weg zum Mission E",
-                    "subtitle": "Element #1 of an hscroll",
+                    "title": "Porsche Mission E",
+                    "subtitle": "Der erste rein elektrisch angetriebene Porsche kommt auf die Straße",
                     "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
                         "type": "web_url",
