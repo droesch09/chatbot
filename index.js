@@ -555,19 +555,20 @@ messageData = {
                         "title": "Gehe zu Praktikum"
                     }],
                 }, {
+                    "title": "Connected Car",
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/family/",
-                        "title": "Connected Car"
+                        "image_url": "http://files3.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-mission-e-teaser/preview/f2176817-3791-11e6-9225-0019999cd470;s3/porsche-preview.jpg",
+                        "title": "Gehe zu Connected Car"
                     }],
                 },{
                     "title": "Entwicklung",
-                    "subtitle": "Die Gleichbehandlung von Frauen und Männern in der Arbeitswelt ist Porsche in besonderes Anliegen.",
-                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-employer-equalopportunities-teaser/preview/67e3524d-ab83-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
+                    "image_url": "http://files3.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-yourentry-students-thesis-teaser/normal/2cf888da-a871-11e4-b849-001a64c55f5c/porsche-normal.jpg",
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/equalopportunities/",
-                        "title": "Gehe zu Chancengleichheit und Vielfalt"
+                        "title": "Gehe zu Entwicklung"
                     }],
                 }]
             }
