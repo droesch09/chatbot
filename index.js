@@ -559,7 +559,7 @@ messageData = {
                     "image_url": "http://files3.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-mission-e-teaser/preview/f2176817-3791-11e6-9225-0019999cd470;s3/porsche-preview.jpg",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/family/",
+                        "url": "https://jobs.porsche.com/index.php?ac=search_result&ac=search_result&search_parameter_page_current=1&hitsperpage=10&search_parameter_order_criterion=date&search_parameter_order_direction=DESC&search_criterion_keyword=&search_criterion_activity_level=141&search_criterion_entry_level=5&search_criterion_country=&search_criterion_physical_location=&search_criterion_division=&btn_dosearch=8+Treffer#search-options",
                         "title": "Gehe zu Connected Car"
                     }],
                 },{
@@ -567,7 +567,7 @@ messageData = {
                     "image_url": "http://files3.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-yourentry-students-thesis-teaser/normal/2cf888da-a871-11e4-b849-001a64c55f5c/porsche-normal.jpg",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/equalopportunities/",
+                        "url": "https://jobs.porsche.com/index.php?ac=search_result&ac=search_result&search_parameter_page_current=1&hitsperpage=10&search_parameter_order_criterion=date&search_parameter_order_direction=DESC&search_criterion_keyword=&search_criterion_activity_level=108&search_criterion_entry_level=5&search_criterion_country=&search_criterion_physical_location=&search_criterion_division=&btn_dosearch=20+Treffer#search-options",
                         "title": "Gehe zu Entwicklung"
                     }],
                 }]
