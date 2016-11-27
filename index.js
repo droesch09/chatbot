@@ -61,6 +61,10 @@ app.post('/webhook/', function (req, res) {
                         sendHelpMessage(sender)
                         continue
                     }
+                    else if (text.includes('Zurück') || text.includes('zurück')) {
+                        sendZurueckMessage(sender)
+                        continue
+                    }
                     sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde für dich bei einem Mitarbeiter nachfragen... :).\nBei diesen Dingen kann ich dir gerne sofort helfen:")
             }
     }
@@ -155,21 +159,59 @@ function sendGenericMessage(sender) {
 function sendHelpMessage(sender) {
     messageData = {
         text: "Ich habe dein Anliegen an einen unserer Mitarbeiter weitergeleitet. Dieser wird sich bald bei dir melden. Kann ich solange etwas anderes für dich tun?",
-         quick_replies: [
+        quick_replies: [
         {
           "content_type":"text",
-          "title":"Praktikum",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Praktikum"
+          "title":"Einstieg bei Porsche",
+            "payload":"EinstiegBeiPorsche1"
         },
         {
           "content_type":"text",
-          "title":"Einstieg",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+          "title":"Über Porsche",
+            "payload":"ÜberPorsche1"
         },
         {
           "content_type":"text",
-          "title":"Über Daniel",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
+          "title":"Events",
+            "payload":"Events1"
+        }
+    ]
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendHelpMessage(sender) {
+    messageData = {
+        text: "Ich habe dein Anliegen an einen unserer Mitarbeiter weitergeleitet. Dieser wird sich bald bei dir melden. Kann ich solange etwas anderes für dich tun?",
+        quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Einstieg bei Porsche",
+            "payload":"EinstiegBeiPorsche1"
+        },
+        {
+          "content_type":"text",
+          "title":"Über Porsche",
+            "payload":"ÜberPorsche1"
+        },
+        {
+          "content_type":"text",
+          "title":"Events",
+            "payload":"Events1"
         }
     ]
     }
