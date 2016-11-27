@@ -426,46 +426,51 @@ function sendPorscheImProfilMessage(sender) {
         }
     })
 }
-function sendPorscheImProfilMessage2(sender) {
+
+function sendPorscheAlsArbeitgeberMessage(sender) {
     messageData = {
         "attachment": {
             "type": "template",
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                    "title": "Mythos Porsche",
-                    "subtitle": "Was macht einen Sportwagenhersteller so wertvoll, dass man sogar vom \"Mythos Porsche\" spricht?",
-                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-myth-teaser/preview/d3b7e4fa-aad5-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
+                    "title": "Unternehmenswerte und Kultur",
+                    "subtitle": "Porsche ist ein einzigartiges Unternehmen mit starken Idealen.",
+                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-employer-values-teaser/preview/52877809-ab83-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
                     "buttons": [{
-                        "type": "Gehe zu Mythos Porsche",
-                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/profile/myth/",
-                        "title": "web url"
+                        "type": "web_url",
+                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/values/",
+                        "title": "Gehe zu Unternehmenswerte und Kultur"
                     }, {
                         "type": "postback",
                         "title": "Zurück",
-                        "payload": "Zurück",
+                        "payload": "Payload for first element in a generic bubble",
                     }],
                 }, {
-                    "title": "Auf Wachstumskurs",
-                    "subtitle": "Im Rahmen der Unternehmensstrategie 2018 möchte Porsche den Fahrzeugabsatz auf 200.000 Einheiten pro Jahr steigern.",
-                    "image_url": "http://files3.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-growth-teaser/preview/e39ce03f-abaf-11e4-b849-001a64c55f5c/porsche-preview.jpg",
+                    "title": "Beruf und Familie",
+                    "subtitle": "Mit vielfältigen Angeboten unterstützen wir unsere Mitarbeiter dabei, die Ansprüche von Beruf und Privatleben in Einklang zu bringen.",
+                    "image_url": "http://files1.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-employer-family-teaser/preview/69c34bea-bc35-11e4-a19d-001a64c55f5c;s3/porsche-preview.jpg",
                     "buttons": [{
+                        "type": "web_url",
+                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/family/",
+                        "title": "Gehe zu Beruf und Familie"
+                    },{
                         "type": "postback",
                         "title": "Zurück",
-                        "payload": "Zurück",
+                        "payload": "Payload for first element in a generic bubble",
                     }],
-                }, {
-                    "title": "Porsche auf dem Weg zum Mission E",
-                    "subtitle": "Der erste rein elektrisch angetriebene Porsche kommt auf die Straße",
-                    "image_url": "http://files3.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-mission-e-teaser/preview/f2176817-3791-11e6-9225-0019999cd470;s3/porsche-preview.jpg",
+                },{
+                    "title": "Chancengleichheit und Vielfalt",
+                    "subtitle": "Die Gleichbehandlung von Frauen und Männern in der Arbeitswelt ist Porsche in besonderes Anliegen.",
+                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-employer-equalopportunities-teaser/preview/67e3524d-ab83-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
                     "buttons": [{
-                        "type": "Gehe zu Mission E",
-                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/profile/mission-e/",
-                        "title": "web url"
+                        "type": "web_url",
+                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/equalopportunities/",
+                        "title": "Gehe zu Chancengleichheit und Vielfalt"
                     }, {
                         "type": "postback",
                         "title": "Zurück",
-                        "payload": "Zurück",
+                        "payload": "Payload for first element in a generic bubble",
                     }],
                 }]
             }
@@ -487,10 +492,6 @@ function sendPorscheImProfilMessage2(sender) {
         }
     })
 }
-
-
-
-
 
 function sendPraktikumURL(sender, activityLevel) {
     
