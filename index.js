@@ -372,14 +372,19 @@ function sendPorscheImProfilMessage(sender) {
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                    "title": "First card",
-                    "subtitle": "Element #1 of an hscroll",
-                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                    "title": "Mythos Porsche",
+                    "subtitle": "Was macht einen Sportwagenhersteller so wertvoll, dass man sogar vom \"Mythos Porsche\" spricht?",
+                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-myth-teaser/preview/d3b7e4fa-aad5-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
                     "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.messenger.com",
+                        "type": "Gehe zu Mythos Porsche",
+                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/profile/myth/",
                         "title": "web url"
                     }, {
+                        "type": "postback",
+                        "title": "Zurück",
+                        "payload": "Zurück",
+                    }],
+                }, {
                         "type": "postback",
                         "title": "Postback",
                         "payload": "Payload for first element in a generic bubble",
