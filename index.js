@@ -46,7 +46,7 @@ app.post('/webhook/', function (req, res) {
                         sendGenericMessage(sender)
                         continue
                     } 
-                    else if (text === "Einstieg bei Porsche") {
+                    else if (text === "aEinstieg bei Porsche") {
                         sendEinstiegBeiPorscheMessage(sender)
                         continue
                     }
