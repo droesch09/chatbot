@@ -304,26 +304,17 @@ function sendTemplateMessage(sender) {
                 "elements": [{
                     "title": "First card",
                     "subtitle": "Element #1 of an hscroll",
-                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                    "image_url": "http://files1.porsche.com/filestore/image/germany/none/rd-2015-jobsandcareer-events-teaser/preview/e73f281c-33c5-11e6-9225-0019999cd470;s3/porsche-preview.jpg",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "https://www.messenger.com",
-                        "title": "web url"
+                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/events/",
+                        "title": "Events"
                     }, {
                         "type": "postback",
-                        "title": "Postback",
-                        "payload": "Payload for first element in a generic bubble",
+                        "title": "Zurück",
+                        "payload": "Zurück",
                     }],
-                }, {
-                    "title": "Second card",
-                    "subtitle": "Element #2 of an hscroll",
-                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
-                    "buttons": [{
-                        "type": "postback",
-                        "title": "Postback",
-                        "payload": "Payload for second element in a generic bubble",
-                    }],
-                }]
+                }
             }
         }
     }
