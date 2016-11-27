@@ -556,10 +556,10 @@ messageData = {
                     }],
                 }, {
                     "title": "Connected Car",
+                    "image_url": "http://files3.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-mission-e-teaser/preview/f2176817-3791-11e6-9225-0019999cd470;s3/porsche-preview.jpg",
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/family/",
-                        "image_url": "http://files3.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-mission-e-teaser/preview/f2176817-3791-11e6-9225-0019999cd470;s3/porsche-preview.jpg",
                         "title": "Gehe zu Connected Car"
                     }],
                 },{
