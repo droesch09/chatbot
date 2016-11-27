@@ -374,10 +374,10 @@ function sendPorscheImProfilMessage(sender) {
                 "elements": [{
                     "title": "Mythos Porsche",
                     "subtitle": "Was macht einen Sportwagenhersteller so wertvoll, dass man sogar vom \"Mythos Porsche\" spricht?",
-                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-myth-teaser/preview/d3b7e4fa-aad5-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "https://www.messenger.com",
+                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/profile/myth/",
                         "title": "web url"
                     }, {
                         "type": "postback",
@@ -387,7 +387,7 @@ function sendPorscheImProfilMessage(sender) {
                 }, {
                     "title": "Auf Wachstumskurs",
                     "subtitle": "Im Rahmen der Unternehmensstrategie 2018 möchte Porsche den Fahrzeugabsatz auf 200.000 Einheiten pro Jahr steigern.",
-                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                    "image_url": "http://files3.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-growth-teaser/preview/e39ce03f-abaf-11e4-b849-001a64c55f5c/porsche-preview.jpg",
                     "buttons": [{
                         "type": "web_url",
                         "url": "https://www.messenger.com",
@@ -399,11 +399,11 @@ function sendPorscheImProfilMessage(sender) {
                     }],
                 },{
                     "title": "Porsche Mission E",
-                    "subtitle": "Der erste rein elektrisch angetriebene Porsche kommt auf die Straße",
-                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                    "subtitle": "Der erste rein elektrisch angetriebene Porsche kommt auf die Straße.",
+                    "image_url": "http://files3.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-mission-e-teaser/preview/f2176817-3791-11e6-9225-0019999cd470;s3/porsche-preview.jpg",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "https://www.messenger.com",
+                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/profile/mission-e/",
                         "title": "web url"
                     }, {
                         "type": "postback",
