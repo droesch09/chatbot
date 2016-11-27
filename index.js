@@ -314,7 +314,7 @@ function sendTemplateMessage(sender) {
                         "title": "Zurück",
                         "payload": "Zurück",
                     }],
-                }
+                }]
             }
         }
     }
