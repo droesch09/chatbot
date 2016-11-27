@@ -438,7 +438,7 @@ function sendPorscheImProfilMessage(sender) {
                     }, {
                         "type": "postback",
                         "title": "Zurück",
-                        "payload": "Payload for first element in a generic bubble",
+                        "payload": "Zurück",
                     }],
                 }, {
                     "title": "Auf Wachstumskurs",
@@ -447,7 +447,7 @@ function sendPorscheImProfilMessage(sender) {
                     "buttons": [{
                         "type": "postback",
                         "title": "Zurück",
-                        "payload": "Payload for first element in a generic bubble",
+                        "payload": "Zurück",
                     }],
                 },{
                     "title": "Porsche Mission E",
@@ -460,7 +460,7 @@ function sendPorscheImProfilMessage(sender) {
                     }, {
                         "type": "postback",
                         "title": "Zurück",
-                        "payload": "Payload for first element in a generic bubble",
+                        "payload": "Zurück",
                     }],
                 }]
             }
@@ -500,7 +500,7 @@ function sendPorscheAlsArbeitgeberMessage(sender) {
                     }, {
                         "type": "postback",
                         "title": "Zurück",
-                        "payload": "Payload for first element in a generic bubble",
+                        "payload": "Zurück",
                     }],
                 }, {
                     "title": "Beruf und Familie",
@@ -513,7 +513,7 @@ function sendPorscheAlsArbeitgeberMessage(sender) {
                     },{
                         "type": "postback",
                         "title": "Zurück",
-                        "payload": "Payload for first element in a generic bubble",
+                        "payload": "Zurück",
                     }],
                 },{
                     "title": "Chancengleichheit und Vielfalt",
@@ -526,7 +526,7 @@ function sendPorscheAlsArbeitgeberMessage(sender) {
                     }, {
                         "type": "postback",
                         "title": "Zurück",
-                        "payload": "Payload for first element in a generic bubble",
+                        "payload": "Zurück",
                     }],
                 }]
             }
