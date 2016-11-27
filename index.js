@@ -33,6 +33,7 @@ app.post('/webhook/', function (req, res) {
         sender = event.sender.id
         if (event.postback && event.postback.payload){
             payload = event.postback.payload
+            console.log(payload)
             if (payload.includes("EinstiegbeiPorsche1")){
                 sendEinstiegBeiPorscheMessage(sender)
                 continue
