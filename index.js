@@ -58,7 +58,7 @@ app.post('/webhook/', function (req, res) {
                         continue
                     }
                     else if (text === "Praktikum") {
-                        sendPorscheAlsArbeitgeberMessage(sender)
+                        sendPraktikumMessage(sender)
                         continue
                     }
                     else if (text.includes('@Help') || text.includes('@help')) {
