@@ -372,26 +372,43 @@ function sendPorscheImProfilMessage(sender) {
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                    "title": "Mythos Porsche",
-                    "subtitle": "Was macht",
-                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-myth-teaser/preview/d3b7e4fa-aad5-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
+                    "title": "First card",
+                    "subtitle": "Element #1 of an hscroll",
+                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
-                        "type": "Mythos Porsche",
-                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/profile/myth/",
+                        "type": "web_url",
+                        "url": "https://www.messenger.com",
                         "title": "web url"
                     }, {
                         "type": "postback",
-                        "title": "Zurück",
-                        "payload": "Zurück",
+                        "title": "Postback",
+                        "payload": "Payload for first element in a generic bubble",
                     }],
                 }, {
-                    "title": "Second card",
-                    "subtitle": "Element #2 of an hscroll",
-                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+                    "title": "First card",
+                    "subtitle": "Element #1 of an hscroll",
+                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
+                        "type": "web_url",
+                        "url": "https://www.messenger.com",
+                        "title": "web url"
+                    }, {
                         "type": "postback",
                         "title": "Postback",
-                        "payload": "Payload for second element in a generic bubble",
+                        "payload": "Payload for first element in a generic bubble",
+                    }],
+                },{
+                    "title": "First card",
+                    "subtitle": "Element #1 of an hscroll",
+                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "https://www.messenger.com",
+                        "title": "web url"
+                    }, {
+                        "type": "postback",
+                        "title": "Postback",
+                        "payload": "Payload for first element in a generic bubble",
                     }],
                 }]
             }
@@ -413,8 +430,7 @@ function sendPorscheImProfilMessage(sender) {
         }
     })
 }
-
-function sendPorscheImProfilMessage1(sender) {
+function sendPorscheImProfilMessage2(sender) {
     messageData = {
         "attachment": {
             "type": "template",
