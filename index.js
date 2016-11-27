@@ -53,7 +53,7 @@ app.post('/webhook/', function (req, res) {
                         sendPorscheImProfilMessage(sender)
                         continue
                     }
-                    else if (text === "Porsche als Arbeitgeber") {
+                    else if (text === "Porsche als Arbeitge...") {
                         sendPorscheAlsArbeitgeberMessage(sender)
                         continue
                     }
