@@ -31,28 +31,29 @@ app.post('/webhook/', function (req, res) {
     for (i = 0; i < messaging_events.length; i++) {
         event = req.body.entry[0].messaging[i]
         sender = event.sender.id
-        else if (event.postback && event.postback.payload) {
-      payload = event.postback.payload;
+        if (event.postback && event.postback.payload) {
+            payload = event.postback.payload;
             console.log(payload)
-       if (payload.includes('EinstiegBeiPorsche1') {
-                sendEinstiegBeiPorscheMessage(sender)
-                continue
-            } 
-    } else if (event.message && event.message.text) {
-            text = event.message.text
-            if (text.includes('Hello') || text.includes('Hi') || text.includes('hi') || text.includes('Hallo') || text.includes('hallo') || text.includes('hello') || text.includes('Hey') || text.includes('hey')) {
-                sendGenericMessage(sender)
-                continue
-            } 
-            else if (text === "Einstieg bei Porsche") {
-                sendEinstiegBeiPorscheMessage(sender)
-                continue
+               if (payload.includes('EinstiegBeiPorsche1') {
+                        sendEinstiegBeiPorscheMessage(sender)
+                        continue
+                    } 
+            } else if (event.message && event.message.text) {
+                    text = event.message.text
+                    if (text.includes('Hello') || text.includes('Hi') || text.includes('hi') || text.includes('Hallo') || text.includes('hallo') || text.includes('hello') || text.includes('Hey') || text.includes('hey')) {
+                        sendGenericMessage(sender)
+                        continue
+                    } 
+                    else if (text === "Einstieg bei Porsche") {
+                        sendEinstiegBeiPorscheMessage(sender)
+                        continue
+                    }
+                    else if (text.includes('@Help') || text.includes('@help')) {
+                        sendHelpMessage(sender)
+                        continue
+                    }
+                    sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde für dich bei Daniel nachfragen... :).\nBei diesen Dingen kann ich dir gerne sofort helfen:")
             }
-            else if (text.includes('@Help') || text.includes('@help')) {
-                sendHelpMessage(sender)
-                continue
-            }
-            sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde für dich bei Daniel nachfragen... :).\nBei diesen Dingen kann ich dir gerne sofort helfen:")
         } 
     res.sendStatus(200)
 })
