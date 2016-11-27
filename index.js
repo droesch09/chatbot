@@ -556,7 +556,6 @@ messageData = {
                     }],
                 }, {
                     "title": "Connected Car",
-                    "subtitle": "Mit vielfältigen Angeboten unterstützen wir unsere Mitarbeiter dabei, die Ansprüche von Beruf und Privatleben in Einklang zu bringen.",
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/family/",
