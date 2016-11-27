@@ -70,7 +70,17 @@ app.post('/webhook/', function (req, res) {
                         continue
                     }
                     sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde für dich bei einem Mitarbeiter nachfragen... :).\nBei diesen Dingen kann ich dir gerne sofort helfen:")
-            }
+        } 
+        else if (event.postback && event.postback.payload) {
+            payload = event.postback.payload;
+            console.log(payload)
+            if (payload.includes('Zurück')) {
+                        sendZurueckMessage(sender)
+                        continue
+                    } 
+                
+      // Handle a payload from this sender
+    }
     }
     res.sendStatus(200)
 })
