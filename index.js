@@ -280,7 +280,7 @@ function sendÜberPorscheMessage(sender) {
         },
         {
           "content_type":"text",
-          "title":"Porsche als Arbeitsgeber",
+          "title":"Porsche als Arbeitgeber",
             "payload":"PorscheAlsArbeitgeber1"
         }
     ]
