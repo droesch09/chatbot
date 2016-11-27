@@ -24,8 +24,6 @@ app.get('/webhook/', function (req, res) {
     res.send('Error, wrong token')
 })
 
-
-
 app.post('/webhook/', function (req, res) {
     messaging_events = req.body.entry[0].messaging
     for (i = 0; i < messaging_events.length; i++) {
@@ -47,7 +45,16 @@ app.post('/webhook/', function (req, res) {
                     }
                     else if (text === "Events") {
                         sendEventsMessage(sender)
-                        sendTemplateMessage(sender)
+                        sendEventsMessage2(sender)
+                        continue
+                    }
+                    // Ebene 1
+                    else if (text === "Porsche im Profil") {
+                        sendPorscheImProfilMessage(sender)
+                        continue
+                    }
+                    else if (text === "Porsche als Arbeitgeber") {
+                        sendPorscheAlsArbeitgeberMessage(sender)
                         continue
                     }
                     else if (text.includes('@Help') || text.includes('@help')) {
@@ -63,6 +70,10 @@ app.post('/webhook/', function (req, res) {
 
 
 var token = "EAAFKotdMmt4BACFX4ZA6xPC4hOKZBrbTZAX5foCEKva2KMlXOGGq2DelsWOQDZBCpUZCg11Fdsq0HRZAy7MsqTb95ZAunkXUX9PJzCJqZBpcU2eXJqQT7PQA5tALk9dOGTr0lsVhY1BEPR3ZCbZAq7hZAESoPhbL1lZCJINGDt3kX4yrPwZDZD"
+
+
+
+//---------------------------------Ebene 0---------------------------------
 
 function sendTextMessage(sender, text) {
     messageData = {
@@ -121,6 +132,44 @@ function sendGenericMessage(sender) {
           "content_type":"text",
           "title":"Events",
             "payload":"Events1"
+        }
+    ]
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendHelpMessage(sender) {
+    messageData = {
+        text: "Ich habe dein Anliegen an einen unserer Mitarbeiter weitergeleitet. Dieser wird sich bald bei dir melden. Kann ich solange etwas anderes für dich tun?",
+         quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Praktikum",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Praktikum"
+        },
+        {
+          "content_type":"text",
+          "title":"Einstieg",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
+        },
+        {
+          "content_type":"text",
+          "title":"Über Daniel",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
         }
     ]
     }
@@ -274,28 +323,8 @@ function sendEventsMessage(sender) {
     })
 }
 
-function sendEventsMessage2(sender) {
-    messageData = {
-        text:"Du suchst das persönliche Gespräch mit uns? Wir sind bei einer Vielzahl von Veranstaltungen vor Ort und freuen uns, dich kennenzulernen.",
-    }
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token:token},
-        method: 'POST',
-        json: {
-            recipient: {id:sender},
-            message: messageData,
-        }
-    }, function(error, response, body) {
-        if (error) {
-            console.log('Error sending messages: ', error)
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error)
-        }
-    })
-}
 
-function sendTemplateMessage(sender) {
+function sendEventsMessage2(sender) {
     messageData = {
         "attachment": {
             "type": "template",
@@ -308,7 +337,7 @@ function sendTemplateMessage(sender) {
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.porsche.com/germany/aboutporsche/jobs/events/",
-                        "title": "Events"
+                        "title": "Gehe zu Events"
                     }, {
                         "type": "postback",
                         "title": "Zurück",
@@ -336,6 +365,73 @@ function sendTemplateMessage(sender) {
 }
 
 //---------------------------------Ebene 2---------------------------------
+
+function sendPorscheImProfilMessage(sender) {
+    messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [{
+                    "title": "Mythos Porsche",
+                    "subtitle": "Was macht einen Sportwagenhersteller so wertvoll, dass man sogar vom \"Mythos Porsche\" spricht?",
+                    "image_url": "http://files2.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-myth-teaser/preview/d3b7e4fa-aad5-11e4-b849-001a64c55f5c;s3/porsche-preview.jpg",
+                    "buttons": [{
+                        "type": "Gehe zu Mythos Porsche",
+                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/profile/myth/",
+                        "title": "web url"
+                    }, {
+                        "type": "postback",
+                        "title": "Zurück",
+                        "payload": "Zurück",
+                    }],
+                }, {
+                    "title": "Auf Wachstumskurs",
+                    "subtitle": "Im Rahmen der Unternehmensstrategie 2018 möchte Porsche den Fahrzeugabsatz auf 200.000 Einheiten pro Jahr steigern.",
+                    "image_url": "http://files3.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-growth-teaser/preview/e39ce03f-abaf-11e4-b849-001a64c55f5c/porsche-preview.jpg",
+                    "buttons": [{
+                        "type": "postback",
+                        "title": "Zurück",
+                        "payload": "Zurück",
+                    }],
+                }, {
+                    "title": "Porsche auf dem Weg zum Mission E",
+                    "subtitle": "Der erste rein elektrisch angetriebene Porsche kommt auf die Straße",
+                    "image_url": "http://files3.porsche.com/filestore/image/multimedia/none/rd-2015-jobsandcareer-profile-mission-e-teaser/preview/f2176817-3791-11e6-9225-0019999cd470;s3/porsche-preview.jpg",
+                    "buttons": [{
+                        "type": "Gehe zu Mission E",
+                        "url": "http://www.porsche.com/germany/aboutporsche/jobs/profile/mission-e/",
+                        "title": "web url"
+                    }, {
+                        "type": "postback",
+                        "title": "Zurück",
+                        "payload": "Zurück",
+                    }],
+                }]
+            }
+        }
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+
+
+
+
 function sendPraktikumURL(sender, activityLevel) {
     
     var url = getPorscheURL("5", "141");
@@ -401,43 +497,6 @@ function sendPraktikumURL(sender, activityLevel) {
 }
 
 
-function sendHelpMessage(sender) {
-    messageData = {
-        text: "Ich habe dein Anliegen an einen unserer Mitarbeiter weitergeleitet. Dieser wird sich bald bei dir melden. Kann ich solange etwas anderes für dich tun?",
-         quick_replies: [
-        {
-          "content_type":"text",
-          "title":"Praktikum",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Praktikum"
-        },
-        {
-          "content_type":"text",
-          "title":"Einstieg",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_Einstieg"
-        },
-        {
-          "content_type":"text",
-          "title":"Über Daniel",
-            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ÜberDaniel"
-        }
-    ]
-    }
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token:token},
-        method: 'POST',
-        json: {
-            recipient: {id:sender},
-            message: messageData,
-        }
-    }, function(error, response, body) {
-        if (error) {
-            console.log('Error sending messages: ', error)
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error)
-        }
-    })
-}
 
 function getPorscheURL(entryLevel, activityLevel){
     return "https://jobs.porsche.com/index.php?ac=search_result&search_criterion_activity_level=" + activityLevel + "&search_criterion_entry_level=" + entryLevel;
