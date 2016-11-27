@@ -555,11 +555,10 @@ messageData = {
                         "title": "Gehe zu Praktikum"
                     }],
                 }, {
-                    "title": "Connected Car",
                     "buttons": [{
                         "type": "web_url",
                         "url": "http://www.porsche.com/germany/aboutporsche/jobs/employer/family/",
-                        "title": "Gehe zu Beruf und Familie"
+                        "title": "Connected Car"
                     }],
                 },{
                     "title": "Entwicklung",
