@@ -38,7 +38,10 @@ app.post('/webhook/', function (req, res) {
                         sendEinstiegBeiPorscheMessage(sender)
                         continue
                     } 
-            } else if (event.message && event.message.text) {
+                    sendGenericMessage(sender)
+ 
+            }
+    else if (event.message && event.message.text) {
                     text = event.message.text
                     if (text.includes('Hello') || text.includes('Hi') || text.includes('hi') || text.includes('Hallo') || text.includes('hallo') || text.includes('hello') || text.includes('Hey') || text.includes('hey')) {
                         sendGenericMessage(sender)
@@ -54,7 +57,7 @@ app.post('/webhook/', function (req, res) {
                     }
                     sendTextMessage(sender, "Das habe ich leider nicht verstanden, sorry! Ich werde für dich bei Daniel nachfragen... :).\nBei diesen Dingen kann ich dir gerne sofort helfen:")
             }
-        } 
+    }
     res.sendStatus(200)
 })
 
