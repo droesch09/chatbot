@@ -385,11 +385,6 @@ function sendPorscheImProfilMessage(sender) {
                         "payload": "Zurück",
                     }],
                 }, {
-                        "type": "postback",
-                        "title": "Postback",
-                        "payload": "Payload for first element in a generic bubble",
-                    }],
-                }, {
                     "title": "Second card",
                     "subtitle": "Element #2 of an hscroll",
                     "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
