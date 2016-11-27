@@ -48,12 +48,16 @@ app.post('/webhook/', function (req, res) {
                         sendEventsMessage2(sender)
                         continue
                     }
-                    // Ebene 1
+                    // Ebene 2
                     else if (text === "Porsche im Profil") {
                         sendPorscheImProfilMessage(sender)
                         continue
                     }
                     else if (text === "Porsche als Arbeitge...") {
+                        sendPorscheAlsArbeitgeberMessage(sender)
+                        continue
+                    }
+                    else if (text === "Praktikum") {
                         sendPorscheAlsArbeitgeberMessage(sender)
                         continue
                     }
