@@ -372,7 +372,7 @@ function sendPorscheImProfilMessage(sender) {
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                    "title": "First card",
+                    "title": "Mythos Porsche",
                     "subtitle": "Element #1 of an hscroll",
                     "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
@@ -385,7 +385,7 @@ function sendPorscheImProfilMessage(sender) {
                         "payload": "Payload for first element in a generic bubble",
                     }],
                 }, {
-                    "title": "First card",
+                    "title": "Auf Wachstumskurs",
                     "subtitle": "Element #1 of an hscroll",
                     "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
@@ -398,7 +398,7 @@ function sendPorscheImProfilMessage(sender) {
                         "payload": "Payload for first element in a generic bubble",
                     }],
                 },{
-                    "title": "First card",
+                    "title": "Auf dem Weg zum Mission E",
                     "subtitle": "Element #1 of an hscroll",
                     "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
